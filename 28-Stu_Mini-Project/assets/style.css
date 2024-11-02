@@ -1,0 +1,178 @@
+:root {
+    --green: #5ae6c1;
+    --purple: #ca97ec;
+    --white: #e0eae4;
+    --dark: rgb(41, 40, 40);
+    --h1: 40px;
+    --h2: 30px;
+    --h3: 20px;
+    --p: 15px;
+}
+
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+::selection {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.75rem;
+    line-height: 1.5;
+    color: var(--white);
+    background-color: var(--dark);
+}
+
+h1, h2, h3, p {
+    color: var(--green);
+    margin-bottom: 0.625rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+p {
+    font-size: var(--p);
+    margin-bottom: 1rem;
+}
+
+#header-p {
+    color: var(--white);
+    font-size: var(--p);
+}
+
+code {
+    font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
+}
+
+header {
+    width: 96%;
+    margin: 0 auto;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+header h1 {
+    padding: 1rem 1.2rem;
+    font-size: 4.5rem;
+}
+
+main {
+    width: 96%;
+    margin: 2rem auto;
+}
+
+footer {
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.card-column {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+}
+
+.code-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    color: var(--green);
+    outline: 2px dashed var(--white);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card .card-header {
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--dark);
+    color: var(--green);
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px var(--green), 0 0 15px var(--green);
+}
+
+.code-card .code-card {
+    flex-grow: 1;
+}
+
+.code-card pre {
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 1.2rem 1rem;
+    color: var(--white);
+    border-radius: 8px;
+    background-image: linear-gradient(
+        rgba(90, 230, 193, 0.3) 0%,
+        rgba(90, 230, 193, 0.6) 100%
+    );
+    display: flex;
+    align-items: center;
+}
+
+.code-card pre:active {
+    user-select: all;
+}
+
+@media screen and (min-width: 768px) {
+    .card-column {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .card-column:last-child {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    header {
+        width: 75%;
+    }
+    .card-column {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
